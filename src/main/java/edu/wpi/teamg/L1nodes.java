@@ -76,8 +76,22 @@ public class L1nodes {
     this.shortName = shortName;
   }
 
-  public String toString(){
-    return "Node [nodeId= "+ nodeID+ ", xcoord= "+xcoord+", ycoord= "+ycoord+", floor= "+floor+
-            ", building= "+building+", nodeType= "+nodeType+", longName= "+longName+", shortName= "+shortName;
+  public String toString() {
+    return "Node [nodeId= "
+        + nodeID
+        + ", xcoord= "
+        + xcoord
+        + ", ycoord= "
+        + ycoord
+        + ", floor= "
+        + floor
+        + ", building= "
+        + building
+        + ", nodeType= "
+        + nodeType
+        + ", longName= "
+        + longName
+        + ", shortName= "
+        + shortName;
   }
 }
