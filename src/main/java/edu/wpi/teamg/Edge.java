@@ -1,4 +1,5 @@
 package edu.wpi.teamg;
+import java.lang.Math;
 
 public class Edge {
     private String edgeID;
@@ -11,8 +12,14 @@ public class Edge {
         endNode=end;
     }
 
-    public int distance(Node A, Node B){
-        return 0;
+    public double distance(Node A, Node B){
+        double x1= A.getNodeX();
+        double x2= B.getNodeX();
+        double y1= A.getNodeY();
+        double y2= B.getNodeY();
+        double distance= Math.sqrt((Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+        return distance;
+
 
     }
 

@@ -22,6 +22,13 @@ public class Node {
 
     }
 
+    public int getNodeX(){
+        return nodeX;
+    }
+    public int getNodeY(){
+        return nodeY;
+    }
+
 
 
 
