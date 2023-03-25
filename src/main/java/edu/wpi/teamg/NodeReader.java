@@ -37,8 +37,9 @@ public class NodeReader {
     l1node.setYcoord(Integer.parseInt(strArray[2]));
     l1node.setFloor(strArray[3]);
     l1node.setBuilding(strArray[4]);
-    l1node.setLongName(strArray[5]);
-    l1node.setShortName(strArray[6]);
+    l1node.setNodeType(strArray[5]);
+    l1node.setLongName(strArray[6]);
+    l1node.setShortName(strArray[7]);
     nodeList.add(l1node);
   }
 }

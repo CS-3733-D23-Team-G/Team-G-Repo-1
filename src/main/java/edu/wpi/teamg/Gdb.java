@@ -1,14 +1,54 @@
 package edu.wpi.teamg;
 
 import java.sql.*;
-import java.sql.SQLException;
 
 public class Gdb {
-  public static void main(String[] args) throws SQLException {
-    Connection connection =
-        DriverManager.getConnection(
-            "jdbc:postgresql://database.cs.wpi.edu:5432/teamgdb", "teamg", "teamg70");
 
-    connection.close();
+  static Connection connection;
+
+  public void createConnection() {
+    try {
+      connection =
+          DriverManager.getConnection(
+              "jdbc:postgresql://database.cs.wpi.edu:5432/teamgdb", "teamg", "teamg70");
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void createStatements(
+      String sql,
+      String nodeID,
+      int xcoord,
+      int ycoord,
+      String floor,
+      String building,
+      String nodeType,
+      String longName,
+      String shortName) {
+    PreparedStatement ps;
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(1, nodeID);
+      ps.setInt(2, xcoord);
+      ps.setInt(3, ycoord);
+      ps.setString(4, floor);
+      ps.setString(5, building);
+      ps.setString(6, nodeType);
+      ps.setString(7, longName);
+      ps.setString(8, shortName);
+      ps.executeUpdate();
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void closeConnection() {
+    try {
+      connection.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
   }
 }
