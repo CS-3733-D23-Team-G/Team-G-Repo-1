@@ -9,12 +9,11 @@ public class Main {
   public static void main(String[] args) {
 
     try {
-      File myObj = new File("C:\\Users\\thoma\\Downloads\\L1Nodes (1).csv");
+      File myObj = new File("C:\\Users\\thoma\\Downloads\\L1Nodes(1).csv");
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {
 
         System.out.println(myReader.next());
-
       }
       myReader.close();
 
