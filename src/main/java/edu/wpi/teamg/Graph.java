@@ -1,3 +1,6 @@
 package edu.wpi.teamg;
 
-public class Graph {}
+public class Graph {
+
+  public Node[] bfs() {}
+}
