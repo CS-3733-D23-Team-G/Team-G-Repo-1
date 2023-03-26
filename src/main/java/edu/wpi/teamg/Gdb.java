@@ -51,6 +51,7 @@ public class Gdb {
       ps.setString(1, edgeID);
       ps.setString(2, startNode);
       ps.setString(3, endNode);
+      ps.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
     }
