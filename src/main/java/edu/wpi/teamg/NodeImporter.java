@@ -1,9 +1,7 @@
 package edu.wpi.teamg;
 
 public class NodeImporter {
-  public void importFiletoDB() {
-
-  public void importFiletoDB(String file) {
+  public void importFiletoDB(String filePath) {
 
     NodeReader reader = new NodeReader();
     Gdb connection = new Gdb();
@@ -12,12 +10,10 @@ public class NodeImporter {
     connection.createConnection();
     System.out.print("connection is created");
 
-    for (L1nodes node : reader.NodeRead()) {
-
     // connection.createConnection();
     // System.out.print("connection is created");
 
-    for (L1nodes node : reader.NodeRead(file)) {
+    for (L1nodes node : reader.NodeRead(filePath)) {
 
       sql =
           "insert into proto1.l1nodes(nodeID, xcoord, ycoord, floor, building, nodetype, longName, shortName)values(?,?,?,?,?,?,?,?)";

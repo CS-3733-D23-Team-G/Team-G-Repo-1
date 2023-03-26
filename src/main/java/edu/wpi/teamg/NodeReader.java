@@ -6,21 +6,21 @@ import java.util.LinkedList;
 public class NodeReader {
   private LinkedList<L1nodes> nodeList = new LinkedList<L1nodes>();
 
-//  public static void main(String[] args) {
-//    NodeReader reader = new NodeReader();
-//    for (L1nodes node : reader.NodeRead()) {
-//      System.out.println(node);
-//    }
-//  }
+  //  public static void main(String[] args) {
+  //    NodeReader reader = new NodeReader();
+  //    for (L1nodes node : reader.NodeRead()) {
+  //      System.out.println(node);
+  //    }
+  //  }
 
-//  public void NodeRead() {
-//
-//    public static void main(String[] args) {
-//      NodeReader reader = new NodeReader();
-//      for (L1nodes node : reader.NodeRead()) {
-//        System.out.println(node);
-//      }
-//    }
+  //  public void NodeRead() {
+  //
+  //    public static void main(String[] args) {
+  //      NodeReader reader = new NodeReader();
+  //      for (L1nodes node : reader.NodeRead()) {
+  //        System.out.println(node);
+  //      }
+  //    }
 
   public LinkedList<L1nodes> NodeRead(String file) {
     BufferedReader br;

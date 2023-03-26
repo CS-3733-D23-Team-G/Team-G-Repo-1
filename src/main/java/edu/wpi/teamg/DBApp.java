@@ -3,6 +3,7 @@ package edu.wpi.teamg;
 import java.sql.*;
 import java.sql.SQLException;
 import java.util.Scanner;
+
 public class DBApp {
   public static void main(String[] args) throws SQLException {
     Scanner scanner = new Scanner(System.in);
@@ -102,6 +103,5 @@ public class DBApp {
     // Close DBMS Connection
     connection.closeConnection();
     System.out.println("Connection is closed");
-
   }
 }

@@ -11,7 +11,7 @@ public class Gdb {
           DriverManager.getConnection(
               "jdbc:postgresql://database.cs.wpi.edu:5432/teamgdb", "teamg", "teamg70");
     } catch (SQLException e) {
-//      e.printStackTrace();
+      //      e.printStackTrace();
       System.err.println("SQL exception");
       printSQLException(e);
     }
@@ -42,13 +42,9 @@ public class Gdb {
 
     } catch (SQLException e) {
 
-      e.printStackTrace();
-    }
-  }
-
-
       System.err.println("SQL exception");
       printSQLException(e);
+      // e.printStackTrace();
     }
   }
 
@@ -67,19 +63,14 @@ public class Gdb {
     return rs;
   }
 
-
   public void closeConnection() {
     try {
       connection.close();
     } catch (SQLException e) {
 
-      e.printStackTrace();
-    }
-
       System.err.println("SQL exception");
       printSQLException(e);
     }
-
   }
 
   public static void printSQLException(SQLException ex) {
@@ -110,6 +101,5 @@ public class Gdb {
     // 42Y55: Table already exists in schema
     if (sqlState.equalsIgnoreCase("42Y55")) return true;
     return false;
-
   }
 }
