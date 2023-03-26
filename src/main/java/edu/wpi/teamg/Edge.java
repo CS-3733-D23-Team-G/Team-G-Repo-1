@@ -16,13 +16,14 @@ public class Edge {
     double x2 = B.getNodeX();
     double y1 = A.getNodeY();
     double y2 = B.getNodeY();
-    int distance = (int)Math.sqrt((Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
+    int distance = (int) Math.sqrt((Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)));
     return distance;
   }
 
   public Node getEndNode() {
     return endNode;
   }
+
   public Node getStartNode() {
     return startNode;
   }
