@@ -9,6 +9,7 @@ public class Node {
     private String building;
     private String longName;
     private String shortName;
+    ;
 
     public Node(String NodeID, int nodeX, int nodeY, String floor, String building, String longName, String shortName) {
         this.NodeID = NodeID;
@@ -31,6 +32,11 @@ public class Node {
     public String getNodeID(){
         return NodeID;
     }
+   /* public boolean equal(String ID){
+        this.NodeID.equals
+        return
+    }*/
+
 
 
 }
