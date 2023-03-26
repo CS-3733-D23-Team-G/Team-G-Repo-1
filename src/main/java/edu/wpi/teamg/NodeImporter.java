@@ -12,7 +12,7 @@ public class NodeImporter {
     for (L1nodes node : reader.NodeRead()) {
       sql =
           "insert into proto1.l1nodes(nodeID, xcoord, ycoord, floor, building, nodetype, longName, shortName)values(?,?,?,?,?,?,?,?)";
-      connection.createStatements(
+      connection.createStatementsNode(
           sql,
           node.getNodeID(),
           node.getXcoord(),

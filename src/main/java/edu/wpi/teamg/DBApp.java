@@ -2,7 +2,9 @@ package edu.wpi.teamg;
 
 public class DBApp {
   public static void main(String[] args) {
-    NodeImporter importer = new NodeImporter();
-    importer.importFiletoDB();
+    NodeImporter Nimporter = new NodeImporter();
+    Nimporter.importFiletoDB();
+    EdgeImporter Eimporter = new EdgeImporter();
+    Eimporter.importFiletoDB();
   }
 }

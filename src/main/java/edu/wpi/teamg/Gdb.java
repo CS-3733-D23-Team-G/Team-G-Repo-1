@@ -16,7 +16,7 @@ public class Gdb {
     }
   }
 
-  public void createStatements(
+  public void createStatementsNode(
       String sql,
       String nodeID,
       int xcoord,
@@ -39,6 +39,18 @@ public class Gdb {
       ps.setString(8, shortName);
       ps.executeUpdate();
 
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void createStatementsEdge(String sql, String edgeID, String startNode, String endNode) {
+    PreparedStatement ps;
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(1, edgeID);
+      ps.setString(2, startNode);
+      ps.setString(3, endNode);
     } catch (SQLException e) {
       e.printStackTrace();
     }
