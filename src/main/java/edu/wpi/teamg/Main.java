@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Main {
 
+
+
   public static void main(String[] args) {
 
     Node[] N1 = new Node[10];
@@ -64,6 +66,7 @@ public class Main {
 
      */
 
-  // shortcut: psvm
+
+
 
 }
