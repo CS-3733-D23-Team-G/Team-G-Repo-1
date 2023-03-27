@@ -6,17 +6,18 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 public class Exporting {
-  static int edgeFileCount = 0;
-  static int nodeFileCount = 0;
+  static int edgeCount;
 
   public static void main(String[] args) {
+    edgeCount = 0;
     makeEdgeCSV();
   }
 
   private static void makeEdgeCSV() {
+    edgeCount++;
     try {
       PrintWriter pw =
-          new PrintWriter(new File("src/main/java/edu/wpi/teamg/L1Edges" + edgeFileCount + ".csv"));
+          new PrintWriter(new File("src/main/java/edu/wpi/teamg/L1Edges" + edgeCount + ".csv"));
       StringBuilder sb = new StringBuilder();
 
       Gdb connection = new Gdb();
@@ -46,7 +47,6 @@ public class Exporting {
       System.out.println("Writing has finished");
 
       connection.closeConnection();
-      edgeFileCount++;
     } catch (FileNotFoundException e) {
       throw new RuntimeException(e);
     } catch (SQLException e) {
