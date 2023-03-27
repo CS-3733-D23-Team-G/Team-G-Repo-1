@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 
+
+  /*
   public static void main(String[] args) {
 
     try {
@@ -26,6 +28,8 @@ public class Main {
     System.out.println("Nathan");
     System.out.println("Thomas");
   }
+
+   */
 
   // shortcut: psvm
 
