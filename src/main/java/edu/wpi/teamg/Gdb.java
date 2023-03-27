@@ -64,4 +64,8 @@ public class Gdb {
       e.printStackTrace();
     }
   }
+
+  public static Connection getConnection() {
+    return connection;
+  }
 }
