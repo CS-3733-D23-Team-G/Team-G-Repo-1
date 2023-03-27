@@ -53,7 +53,40 @@ public class DBApp {
 
           version = 0;
           break;
+        case 2:
+          String nodeID;
+          int xcoord;
+          int ycoord;
 
+          System.out.println("Please enter the nodeID;");
+          nodeID = scanner.nextLine();
+
+          System.out.println("Please enter the x-coordinate:");
+          xcoord = Integer.parseInt(scanner.nextLine());
+
+          System.out.println("Please enter the y-coordinate:");
+          ycoord = Integer.parseInt(scanner.nextLine());
+
+          String query = "Update proto1.l1nodes set xcoord = ?, ycoord = ? where nodeID = ?";
+          connection.createUpdateStatements(query, nodeID, xcoord, ycoord);
+          System.out.println("Coordinates updated");
+
+          version = 0;
+          break;
+        case 3:
+          String building;
+          System.out.println("Please enter the nodeID;");
+          nodeID = scanner.nextLine();
+
+          System.out.println("Please enter the name of the building");
+          building = scanner.nextLine();
+
+          query = "Update proto1.l1nodes set building = ? where nodeID = ?";
+          connection.createLocationUpdate(query, nodeID, building);
+          System.out.println("Building name updated");
+
+          version = 0;
+          break;
         case 5:
           System.out.println("  Please enter the directory of the CSV file:");
           String filePath = scanner.nextLine();

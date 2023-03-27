@@ -63,6 +63,35 @@ public class Gdb {
     return rs;
   }
 
+  public void createUpdateStatements(String sql, String nodeID, int xcoord, int ycoord) {
+    PreparedStatement ps;
+
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(3, nodeID);
+      ps.setInt(1, xcoord);
+      ps.setInt(2, ycoord);
+      ps.executeUpdate();
+    } catch (SQLException e) {
+      System.err.println("SQL exception");
+      printSQLException(e);
+    }
+  }
+
+  public void createLocationUpdate(String sql, String nodeID, String building) {
+    PreparedStatement ps;
+
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(2, nodeID);
+      ps.setString(1, building);
+      ps.executeUpdate();
+    } catch (SQLException e) {
+      System.err.println("SQL exception");
+      printSQLException(e);
+    }
+  }
+
   public void closeConnection() {
     try {
       connection.close();

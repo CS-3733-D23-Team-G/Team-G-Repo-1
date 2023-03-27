@@ -7,8 +7,8 @@ public class NodeImporter {
     Gdb connection = new Gdb();
     String sql;
 
-    connection.createConnection();
-    System.out.print("connection is created");
+    // connection.createConnection();
+    // System.out.print("connection is created");
 
     // connection.createConnection();
     // System.out.print("connection is created");
