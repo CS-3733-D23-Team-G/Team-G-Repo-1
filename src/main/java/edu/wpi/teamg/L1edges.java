@@ -2,8 +2,8 @@ package edu.wpi.teamg;
 
 public class L1edges {
   private String edgeID;
-  private L1nodes startnode;
-  private L1nodes endNode;
+  private String startnode;
+  private String endNode;
 
   public L1edges() {}
 
@@ -15,19 +15,23 @@ public class L1edges {
     this.edgeID = edgeID;
   }
 
-  public L1nodes getStartnode() {
+  public String getStartnode() {
     return startnode;
   }
 
-  public void setStartnode(L1nodes startnode) {
+  public void setStartNode(String startnode) {
     this.startnode = startnode;
   }
 
-  public L1nodes getEndNode() {
+  public String getEndNode() {
     return endNode;
   }
 
-  public void setEndNode(L1nodes endNode) {
+  public void setEndNode(String endNode) {
     this.endNode = endNode;
+  }
+
+  public String toString() {
+    return "Edge [edgeID= " + edgeID + ", startNode= " + startnode + ", endNode= " + endNode;
   }
 }

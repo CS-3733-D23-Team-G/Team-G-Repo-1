@@ -17,7 +17,7 @@ public class Gdb {
     }
   }
 
-  public void createStatements(
+  public void createStatementsNode(
       String sql,
       String nodeID,
       int xcoord,
@@ -92,6 +92,19 @@ public class Gdb {
     }
   }
 
+  public void createStatementsEdge(String sql, String edgeID, String startNode, String endNode) {
+    PreparedStatement ps;
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(1, edgeID);
+      ps.setString(2, startNode);
+      ps.setString(3, endNode);
+      ps.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
   public void closeConnection() {
     try {
       connection.close();
@@ -102,6 +115,7 @@ public class Gdb {
     }
   }
 
+  
   public void deleteRow() {
     String query = "DELETE FROM proto1.l1nodes WHERE nodeid = ?";
 
@@ -136,5 +150,8 @@ public class Gdb {
     // 42Y55: Table already exists in schema
     if (sqlState.equalsIgnoreCase("42Y55")) return true;
     return false;
+  }
+  public static Connection getConnection() {
+    return connection;
   }
 }
