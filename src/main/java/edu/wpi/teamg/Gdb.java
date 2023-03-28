@@ -17,37 +17,6 @@ public class Gdb {
     }
   }
 
-  public void createStatements(
-      String sql,
-      String nodeID,
-      int xcoord,
-      int ycoord,
-      String floor,
-      String building,
-      String nodeType,
-      String longName,
-      String shortName) {
-    PreparedStatement ps;
-    try {
-      ps = connection.prepareStatement(sql);
-      ps.setString(1, nodeID);
-      ps.setInt(2, xcoord);
-      ps.setInt(3, ycoord);
-      ps.setString(4, floor);
-      ps.setString(5, building);
-      ps.setString(6, nodeType);
-      ps.setString(7, longName);
-      ps.setString(8, shortName);
-      ps.executeUpdate();
-
-    } catch (SQLException e) {
-
-      System.err.println("SQL exception");
-      printSQLException(e);
-      // e.printStackTrace();
-    }
-  }
-
   public ResultSet createStatements(String sql) {
     PreparedStatement ps;
     ResultSet rs = null;
@@ -102,11 +71,10 @@ public class Gdb {
     }
   }
 
-  public void deleteRow(){
+  public void deleteRow() {
     String query = "DELETE FROM proto1.l1nodes WHERE nodeid = ?";
     System.out.println("Row deleted");
   }
-
 
   public static void printSQLException(SQLException ex) {
     for (Throwable e : ex) {
@@ -136,5 +104,9 @@ public class Gdb {
     // 42Y55: Table already exists in schema
     if (sqlState.equalsIgnoreCase("42Y55")) return true;
     return false;
+  }
+
+  public static Connection getConnection() {
+    return connection;
   }
 }
