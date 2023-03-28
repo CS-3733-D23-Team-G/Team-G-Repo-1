@@ -15,6 +15,7 @@ public class Main {
                 (int) r.nextInt(100) + i,
                 (int) r.nextInt(100) + i,
                 "L1",
+                "fsadfasd",
                 "dsfajd;",
                 "jk;ldsjf",
                 "dsfaj;sldk");
@@ -42,7 +43,7 @@ public class Main {
       }
     }
 
-       */
+
     /*
 
       try {
@@ -67,4 +68,4 @@ public class Main {
        */
 
   }
-}
+

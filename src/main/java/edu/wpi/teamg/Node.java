@@ -7,6 +7,7 @@ public class Node {
   private int nodeY;
   private String floor;
   private String building;
+  private String nodeType;
   private String longName;
   private String shortName;;
 
@@ -15,6 +16,7 @@ public class Node {
       int nodeX,
       int nodeY,
       String floor,
+      String nodeType,
       String building,
       String longName,
       String shortName) {
@@ -22,6 +24,7 @@ public class Node {
     this.nodeX = nodeX;
     this.nodeY = nodeY;
     this.floor = floor;
+    this.nodeType= nodeType;
     this.building = building;
     this.longName = longName;
     this.shortName = shortName;
