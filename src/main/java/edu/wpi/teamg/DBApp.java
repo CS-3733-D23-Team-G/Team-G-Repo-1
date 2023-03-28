@@ -51,6 +51,17 @@ public class DBApp {
                 rs.getString("shortname"));
           }
 
+          System.out.println("\n");
+
+          sql = "select * from teamgdb.proto1.l1edges";
+          ResultSet rs2 = connection.createStatements(sql);
+          System.out.format(" %-21s %10s %10s\n", "edgeID", "startNode", "endNode");
+          while (rs2.next()) {
+            System.out.format(
+                " %-21s %10s %10s\n",
+                rs2.getString("edgeid"), rs2.getString("startnode"), rs2.getString("endnode"));
+          }
+          System.out.println("\n");
           version = 0;
           break;
         case 2:
