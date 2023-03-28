@@ -63,6 +63,9 @@ dependencies {
             'net.java.dev.jna:jna:5.12.1',
             'org.hibernate:hibernate-c3p0:6.1.6.Final',
             'com.jfoenix:jfoenix:9.0.10',
+            // https://mvnrepository.com/artifact/org.yaml/snakeyaml
+            'org.yaml:snakeyaml:2.0'
+
     )
 
     String javaFxVersion = "19"
