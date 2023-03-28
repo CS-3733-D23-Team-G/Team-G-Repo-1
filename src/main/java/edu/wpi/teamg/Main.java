@@ -8,6 +8,8 @@ public class Main {
 
   public static void main(String[] args) {
 
+
+    /*
     Node[] N1 = new Node[10];
     Random r = new Random(5591);
     for (int i = 0; i < 10; i++) {
@@ -43,6 +45,8 @@ public class Main {
       System.out.println();
     }
   }
+
+     */
   /*
 
     try {
@@ -67,6 +71,6 @@ public class Main {
      */
 
 
-
+  }
 
 }
