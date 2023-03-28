@@ -1,42 +1,32 @@
 package edu.wpi.teamg;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class NodeDAO {
 
+  public static void main(String[] args) throws SQLException {
 
-    public static void main(String[] args) throws SQLException {
+    // Create a connection
+    Connection connection = DriverManager.getConnection();
 
+    // Make a Statement
+    Statement statement = connection.createStatement();
 
-        //Create a connection
-        Connection connection = DriverManager.getConnection();
+    // Execute statement
+    ResultSet rs = statement.execute();
 
-        //Make a Statement
-        Statement statement = connection.createStatement();
+    while (rs.next()) {}
 
-        //Execute statement
-        ResultSet rs = statement.execute();
+    // Close connection
+    connection.close();
+  }
 
-        while(rs.next()){
+  public NodeDAO() {}
 
-        }
+  /*
+  public listO getList(ArrayList<Node> listOfNodes){
 
-        //Close connection
-        connection.close();
-    }
+  }
 
-
-
-    public NodeDAO(){
-
-    }
-
-
-    /*
-    public listO getList(ArrayList<Node> listOfNodes){
-
-    }
-
-     */
+   */
 }

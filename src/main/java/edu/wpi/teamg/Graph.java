@@ -70,7 +70,7 @@ public class Graph {
       verVisited.add(false);
       // Adds our inf to the table, so we are left with our
       // (0, inf, inf, inf, inf, inf, inf, inf)
-      // dis.add(totalDistance);
+      dis.add(totalDistance);
     }
     // Stores a -1 in the beginning of the parent array
     // This will be used to indicate the end of our list of nodes later
@@ -120,7 +120,7 @@ public class Graph {
   }
 
   // HELPER FUNCTION FOR OUR A* alg
-  public static void printMySolution(int start, int[] parentNodes, int end) {
+  public void printMySolution(int start, int[] parentNodes, int end) {
     System.out.println(" ");
     System.out.println("The Nodes that will lead to your total min path are: ");
     if (end != start) {
@@ -129,11 +129,11 @@ public class Graph {
   }
 
   // HELPER FUNCTION FOR OUR A* alg
-  public static void printPath(int current, int[] parent, int start) {
+  public void printPath(int current, int[] parent, int start) {
     if (current == -1) {
       return;
     }
     printPath(parent[current], parent, start);
-    System.out.print(current + " ");
+    System.out.print(V[current].getNodeID() + " ");
   }
 }
