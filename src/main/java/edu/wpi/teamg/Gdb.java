@@ -3,6 +3,7 @@ package edu.wpi.teamg;
 import java.sql.*;
 
 public class Gdb {
+
   static Connection connection;
 
   public void createConnection() {
@@ -78,6 +79,18 @@ public class Gdb {
     }
   }
 
+  public void createDeleteStatements(String sql, String nodeID) {
+    PreparedStatement ps;
+    try {
+      ps = connection.prepareStatement(sql);
+      ps.setString(1, nodeID);
+      ps.executeUpdate();
+    } catch (SQLException e) {
+      System.err.println("SQL exception");
+      printSQLException(e);
+    }
+  }
+
   public void createLocationUpdate(String sql, String nodeID, String building) {
     PreparedStatement ps;
 
@@ -101,12 +114,6 @@ public class Gdb {
       printSQLException(e);
     }
   }
-
-  public void deleteRow(){
-    String query = "DELETE FROM proto1.l1nodes WHERE nodeid = ?";
-    System.out.println("Row deleted");
-  }
-
 
   public static void printSQLException(SQLException ex) {
     for (Throwable e : ex) {
@@ -136,5 +143,12 @@ public class Gdb {
     // 42Y55: Table already exists in schema
     if (sqlState.equalsIgnoreCase("42Y55")) return true;
     return false;
+  }
+
+  public static void main(String[] args) {
+    Gdb connection = new Gdb();
+    connection.createConnection();
+    String query = "DELETE FROM proto1.l1nodes WHERE nodeID = ?";
+    connection.createDeleteStatements(query, "CCONF003L1");
   }
 }
