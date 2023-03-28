@@ -102,6 +102,13 @@ public class Gdb {
     }
   }
 
+  public void deleteRow(){
+    String query = "DELETE FROM proto1.l1nodes WHERE nodeid = ?";
+    
+    System.out.println("Row deleted");
+  }
+
+
   public static void printSQLException(SQLException ex) {
     for (Throwable e : ex) {
       if (e instanceof SQLException) {
