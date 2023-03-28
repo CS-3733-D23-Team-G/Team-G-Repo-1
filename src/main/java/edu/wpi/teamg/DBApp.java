@@ -87,12 +87,40 @@ public class DBApp {
 
           version = 0;
           break;
+        case 4:
+          System.out.println("Do you want to export node or edge?");
+          String response = scanner.nextLine();
+          if (response.toLowerCase().equals("node")) {
+            Exporting exporter = new Exporting();
+            exporter.makeNodeCSV();
+            System.out.println("Node csv created!");
+          } else if (response.toLowerCase().equals("edge")) {
+            Exporting exporter = new Exporting();
+            exporter.makeEdgeCSV();
+            System.out.println("Edge csv created!");
+          } else {
+            System.out.println("invalid response");
+          }
+          version = 0;
+          break;
         case 5:
-          System.out.println("  Please enter the directory of the CSV file:");
-          String filePath = scanner.nextLine();
+          System.out.println(" Is is node of edge?");
+          response = scanner.nextLine();
+          if (response.toLowerCase().equals("node")) {
+            System.out.println("  Please enter the directory of the CSV file: ");
+            String filePath = scanner.nextLine();
 
-          NodeImporter importer = new NodeImporter();
-          importer.importFiletoDB(filePath);
+            Importer importer = new Importer();
+            importer.nodeImport(filePath);
+          } else if (response.toLowerCase().equals("edge")) {
+            System.out.println("  Please enter the directory of the CSV file: ");
+            String filePath = scanner.nextLine();
+
+            Importer importer = new Importer();
+            importer.edgeImport(filePath);
+          } else {
+            System.out.println("invalid response");
+          }
 
           version = 0;
           break;

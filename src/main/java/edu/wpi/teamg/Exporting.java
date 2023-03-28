@@ -6,17 +6,10 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 public class Exporting {
-  static int edgeCount;
-  static int nodeCount;
+  static int edgeCount = 1;
+  static int nodeCount = 1;
 
-  public static void main(String[] args) {
-    edgeCount = 0;
-    nodeCount = 0;
-    makeNodeCSV();
-    makeEdgeCSV();
-  }
-
-  private static void makeEdgeCSV() {
+  public static void makeEdgeCSV() {
     edgeCount++;
     try {
       PrintWriter pw =
@@ -57,7 +50,7 @@ public class Exporting {
     }
   }
 
-  private static void makeNodeCSV() {
+  public static void makeNodeCSV() {
     nodeCount++;
     try {
       PrintWriter pw =

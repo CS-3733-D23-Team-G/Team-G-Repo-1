@@ -17,37 +17,6 @@ public class Gdb {
     }
   }
 
-  public void createStatementsNode(
-      String sql,
-      String nodeID,
-      int xcoord,
-      int ycoord,
-      String floor,
-      String building,
-      String nodeType,
-      String longName,
-      String shortName) {
-    PreparedStatement ps;
-    try {
-      ps = connection.prepareStatement(sql);
-      ps.setString(1, nodeID);
-      ps.setInt(2, xcoord);
-      ps.setInt(3, ycoord);
-      ps.setString(4, floor);
-      ps.setString(5, building);
-      ps.setString(6, nodeType);
-      ps.setString(7, longName);
-      ps.setString(8, shortName);
-      ps.executeUpdate();
-
-    } catch (SQLException e) {
-
-      System.err.println("SQL exception");
-      printSQLException(e);
-      // e.printStackTrace();
-    }
-  }
-
   public ResultSet createStatements(String sql) {
     PreparedStatement ps;
     ResultSet rs = null;
@@ -92,19 +61,6 @@ public class Gdb {
     }
   }
 
-  public void createStatementsEdge(String sql, String edgeID, String startNode, String endNode) {
-    PreparedStatement ps;
-    try {
-      ps = connection.prepareStatement(sql);
-      ps.setString(1, edgeID);
-      ps.setString(2, startNode);
-      ps.setString(3, endNode);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
-  }
-
   public void closeConnection() {
     try {
       connection.close();
@@ -115,7 +71,6 @@ public class Gdb {
     }
   }
 
-  
   public void deleteRow() {
     String query = "DELETE FROM proto1.l1nodes WHERE nodeid = ?";
 
@@ -151,6 +106,7 @@ public class Gdb {
     if (sqlState.equalsIgnoreCase("42Y55")) return true;
     return false;
   }
+
   public static Connection getConnection() {
     return connection;
   }
