@@ -3,7 +3,7 @@ package edu.wpi.teamg;
 import java.sql.*;
 
 public class NodeDAO {
-
+  /*
   public static void main(String[] args) throws SQLException {
 
     // Create a connection

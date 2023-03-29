@@ -8,18 +8,18 @@ public class EdgeDAO {
   public static void main(String[] args) throws SQLException {
 
     // Create a connection
-    Connection connection = DriverManager.getConnection();
+    // Connection connection = DriverManager.getConnection();
 
     // Make a Statement
-    Statement statement = connection.createStatement();
+    // Statement statement = connection.createStatement();
 
     // Execute statement
-    ResultSet rs = statement.execute();
+    // ResultSet rs = statement.execute();
 
-    while (rs.next()) {}
+    //   while (rs.next()) {}
 
     // Close connection
-    connection.close();
+    //  connection.close();
   }
 
   public EdgeDAO(ArrayList<Edge> listOfEdges) {}

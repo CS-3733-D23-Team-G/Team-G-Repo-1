@@ -24,7 +24,7 @@ public class Node {
     this.nodeX = nodeX;
     this.nodeY = nodeY;
     this.floor = floor;
-    this.nodeType= nodeType;
+    this.nodeType = nodeType;
     this.building = building;
     this.longName = longName;
     this.shortName = shortName;
